@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
+
 import './App.css';
+import ProfilePage from './Pages/CustomerProfilePage/ProfilePage';
+
+import { CssBaseline } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark', // 👈 this enables dark mode
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+  },
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <ThemeProvider theme={theme}>
+    <CssBaseline /> 
+      <ProfilePage/>
+    </ThemeProvider>
+
+
     </div>
+   
   );
 }
 
